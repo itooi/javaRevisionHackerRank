@@ -1,0 +1,31 @@
+/* Question on Java Output Formatting
+
+Output:
+
+================================
+java           100 
+cpp            065 
+python         050 
+================================
+
+Each String is left-justified with trailing whitespace through the first  15 characters. The leading digit of the integer is the 16th character, and each integer that was less than 3  digits now has leading zeroes. */
+
+//Answer
+
+import java.util.Scanner;
+
+public class Solution {
+
+    public static void main(String[] args) {
+            Scanner sc=new Scanner(System.in);//Creates a scanner to read input from the user.
+            System.out.println("================================");
+            for(int i=0;i<3;i++){ // loop 3 times to read the 3 times of input
+                String s1=sc.next();
+                int x=sc.nextInt();
+                System.out.printf("%-14s %03d \n",s1,x); //format left-align (-) 14 spaces character, without the (-) means right align, d = interger, If x has less than 3 digits, it prints it with leading/padding zeroes (007); if x has 3 or more digits, it prints normally
+         
+            }
+            System.out.println("================================");
+
+    }
+}
